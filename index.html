@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dBlueBerry — iDea</title>
+  <meta name="description" content="dBlueBerry — exploring new ways to turn ideas into innovation.">
+  <link rel="icon" href="logo.png">
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+      background: #fff;
+      color: #10264d;
+      overflow: hidden;
+    }
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      position: relative;
+    }
+    .orb {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(70,140,235,.13), rgba(70,140,235,0) 68%);
+      filter: blur(4px);
+      animation: float 7s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .orb.one { top: -180px; right: -100px; }
+    .orb.two { bottom: -220px; left: -120px; animation-delay: -3s; }
+    main {
+      width: min(900px, 100%);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: reveal 1s ease-out both;
+    }
+    .logo {
+      width: min(430px, 78vw);
+      height: auto;
+      margin-bottom: 48px;
+      animation: logoIn 1.1s cubic-bezier(.2,.8,.2,1) both;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 500;
+    }
+    p {
+      margin: 22px auto 36px;
+      max-width: 620px;
+      font-size: clamp(18px, 2.2vw, 23px);
+      line-height: 1.5;
+      color: #5c6c82;
+      font-weight: 400;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 25px;
+      border-radius: 999px;
+      background: #10264d;
+      color: white;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 600;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+      box-shadow: 0 10px 30px rgba(16,38,77,.16);
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      background: #173565;
+      box-shadow: 0 14px 35px rgba(16,38,77,.22);
+    }
+    .arrow { transition: transform .2s ease; }
+    .button:hover .arrow { transform: translateX(3px); }
+    .small {
+      margin-top: 70px;
+      font-size: 13px;
+      color: #a0a9b5;
+      letter-spacing: .04em;
+    }
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes logoIn {
+      from { opacity: 0; transform: scale(.94); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes float {
+      0%,100% { transform: translate3d(0,0,0); }
+      50% { transform: translate3d(0,18px,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <main>
+      <img class="logo" src="logo.png" alt="dBlueBerry">
+      <h1>Ideas, explored differently.</h1>
+      <p>Discover iDea — an experimental tool for exploring opportunities, perspectives and new directions.</p>
+      <a class="button" href="https://app.dblueberry.com">
+        Test iDea <span class="arrow">→</span>
+      </a>
+      <div class="small">dBlueBerry · iDea</div>
+    </main>
+  </div>
+</body>
+</html>
